@@ -1,166 +1,114 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-:root {
-    --primary-color: #2563eb;
-    --text-color: #1f2937;
-    --bg-color: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.85); 
-}
-
 body {
-    background-color: #f3f4f6; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-color: #eee;
 }
-
-/* Navbar Container */
-.navbar {
-    position: fixed; /* Supaya tetap di atas saat scroll */
-    top: 0;
-    width: 100%;
-    padding: 1.2rem 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    background: transparent;
+header {
+    background-color: #234;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
-
-/* Efek saat discroll */
-.navbar.scrolled {
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Logo Styling */
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-.logo span {
-    color: var(--primary-color);
-}
-
-/* Nav Links */
-.nav-links {
-    display: flex;
+nav ul {
     list-style: none;
-    gap: 30px;
-    align-items: center;
+    padding: 10px 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #234;
 }
-
-.nav-links li a {
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.3s ease;
 }
-
-/* Animasi Garis Bawah */
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
+nav ul li a:hover {
+    color: #f63;
 }
-
-.nav-links li a:hover {
-    color: var(--primary-color);
+main {
+    padding: 20px;
 }
-
-.nav-links li a:hover::after {
-    width: 100%;
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Tombol Logout Spesial */
-.btn-logout {
-    padding: 8px 20px;
-    background-color: var(--primary-color);
-    color: white !important;
-    border-radius: 20px;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+.row {
+    margin-bottom: 15px;
 }
-
-.btn-logout:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-2px); /* Efek naik sedikit */
+form#form-user {
+    background: #fff;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
 }
-
-.btn-logout::after {
-    display: none; /* Hilangkan garis bawah untuk tombol */
+form#form-user label {
+    display: inline-block;
+    width: 120px;
 }
-
-/* Hamburger Menu (Awalnya disembunyikan di desktop) */
-.burger {
-    display: none;
+#form-user input[type="text"],
+#form-user input[type="password"] {
+    width: 475px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+form button {
+    padding: 10px 15px;
+    background-color: #4b5;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 5px;
-    transition: all 0.3s ease;
+form button:hover {
+    background-color: #3a4;
+}
+#form-user button {
+    margin-left: 125px;
+}
+form#form-login {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: auto;
+}
+#form-login label {
+    display: block;
+    margin-bottom: 5px;
+}
+#form-login input[type="text"],
+#form-login input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+#form-login button {
+    width: 100%;
+}
+.flash-message {
+    color: red;
+    margin-bottom: 15px;
 }
 
-/* Responsive Mobile Style */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 100vh;
-        top: 0;
-        background-color: var(--bg-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 60%;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.nav-active {
-        transform: translateX(0%); /* Geser masuk */
-    }
-
-    .burger {
-        display: block; /* Munculkan di HP */
-        z-index: 1001;
-    }
-
-    /* Animasi Burger menjadi X */
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .toggle .line2 {
-        opacity: 0;
-    }
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #ddd;
+}
+tr:hover {
+    background-color: #eee;
 }
