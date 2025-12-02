@@ -96,7 +96,7 @@ section {
 }
 
 
-/* LOGIN FORM (GLASS TRANSPARENT) */
+/* LOGIN FORM  */
 
 form#form-login {
     display: flex;
@@ -197,7 +197,7 @@ form#form-login input:focus {
 }
 
 
-/* TABLE CARD + MODERN TABLE */
+/* TABLE CARD */
 
 
 .table-card {
