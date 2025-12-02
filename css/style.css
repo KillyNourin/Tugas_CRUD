@@ -1,114 +1,259 @@
-body {
-    font-family: Arial, sans-serif;
+
+/* GLOBAL STYLE */
+
+* {
     margin: 0;
-    padding: 0px;
-    background-color: #eee;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-header {
-    background-color: #234;
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    min-height: 100vh;
 }
+
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* NAVIGATION */
+
+
 nav ul {
     list-style: none;
-    padding: 10px 0;
-    margin: 0;
+    padding: 15px 0;
     display: flex;
     justify-content: center;
-    background-color: #234;
+    gap: 25px;
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-nav ul li {
-    margin: 0 15px;
-}
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
-}
-nav ul li a:hover {
-    color: #f63;
-}
-main {
-    padding: 20px;
-}
-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.row {
-    margin-bottom: 15px;
-}
-form#form-user {
-    background: #fff;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-}
-form#form-user label {
-    display: inline-block;
-    width: 120px;
-}
-#form-user input[type="text"],
-#form-user input[type="password"] {
-    width: 475px;
-    padding: 8px;
-    box-sizing: border-box;
-}
-form button {
-    padding: 10px 15px;
-    background-color: #4b5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-form button:hover {
-    background-color: #3a4;
-}
-#form-user button {
-    margin-left: 125px;
-}
-form#form-login {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 400px;
-    margin: auto;
-}
-#form-login label {
-    display: block;
-    margin-bottom: 5px;
-}
-#form-login input[type="text"],
-#form-login input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-#form-login button {
-    width: 100%;
-}
-.flash-message {
-    color: red;
-    margin-bottom: 15px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-table {
+nav ul li a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 40px 0 20px;
+    backdrop-filter: blur(5px);
+}
+
+header h1 {
+    font-size: 2.4rem;
+    animation: fadeIn 0.8s ease;
+}
+
+
+/* MAIN WRAPPER & CARD */
+
+
+main {
+    padding: 40px 20px;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255,255,255,0.18);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+    animation: fadeUp 1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* LOGIN FORM (GLASS TRANSPARENT) */
+
+form#form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form#form-login input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+form#form-login input:focus {
+    background: rgba(255,255,255,0.4);
+}
+
+
+/* FORM CARD (CREATE / EDIT MEMBER) */
+
+
+.form-card {
+    width: 550px;
+    padding: 25px 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #000;
+}
+
+.center-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-card {
+    width: 500px;
+}
+
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-row label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.form-row input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+    background: #fff;
+    color: #000;
+}
+
+.form-row input:focus {
+    border-color: #6c5ce7;
+}
+
+/* Divider */
+.divider {
+    border: none;
+    height: 1px;
+    background: #ddd;
+    margin: 25px 0;
+}
+
+/* Card Button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #574bff;
+}
+
+
+/* TABLE CARD + MODERN TABLE */
+
+
+.table-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    max-width: 1000px;
+    margin: auto;
+    animation: fadeIn 0.5s ease;
+    color: #000;
+}
+
+.table-card h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Modern Table */
+.modern-table {
     width: 100%;
     border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
 }
-th, td {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
+
+.modern-table thead {
+    background: #234;
+    color: white;
 }
-th {
-    background-color: #ddd;
+
+.modern-table th,
+.modern-table td {
+    padding: 12px 15px;
 }
-tr:hover {
-    background-color: #eee;
+
+.modern-table tbody tr {
+    background: #fff;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.modern-table tbody tr:hover {
+    background: #f3f6ff;
+    transform: scale(1.01);
+}
+
+.modern-table th.actions-column,
+.modern-table td:last-child {
+    text-align: center;
+}
+
+
+/* FLASH MESSAGE */
+
+
+.flash-message {
+    color: #ff6a6a;
+    font-weight: bold;
 }

@@ -15,26 +15,30 @@ require_once 'inc/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-    <header>
-        <h1>Login User</h1>
-    </header>
+</head>
+<body>
+
+<header>
+    <h1>Login User</h1>
+</header>
+
     <main>
-        <form action="authenticate.php" method="POST" id="form-login">
-        <div class="row"></div>
-        <div class="row">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" value="" autofocus required>
+        <div class="center-container">
+            <div class="form-card">
+                <form action="authenticate.php" method="POST" id="form-login">
+                    <div class="form-row">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" autofocus required>
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
         </div>
-        <div class="row">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="row">
-            <button type="submit">Login</button>
-        </div>
-        </form>
     </main>
+
 </body>
 </html>
