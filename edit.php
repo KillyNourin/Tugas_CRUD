@@ -22,7 +22,7 @@ require_once 'inc/config.php';
     <header>
         <h1>Edit Member</h1>
     </header>
-    <nav></nav>
+    <?php Utility::showNav(); ?>
     <main>
         <section>
             <form action="update.php" method="post" id="form-user">

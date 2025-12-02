@@ -20,7 +20,7 @@ require_once 'inc/config.php';
     <header>
         <h1>New Member</h1>
     </header>
-    <nav></nav>
+    <?php Utility::showNav(); ?>
     <main>
         <section>
             <form action="save.php" method="post" id="form-user">
