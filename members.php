@@ -20,7 +20,7 @@ require_once 'inc/config.php';
     <header>
         <h1>Members</h1>
     </header>
-    <nav></nav>
+    <?php Utility::showNav(); ?>
     <main>
         <section>
         <h2>Member Table</h2>

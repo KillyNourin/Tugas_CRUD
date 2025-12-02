@@ -18,7 +18,7 @@ require_once 'inc/config.php';
     <header>
         <h1>Home</h1>
     </header>
-    <nav></nav>
+    <?php Utility::showNav(); ?>
     <main?>
         <section>
         <h2>Welcome to the Dashboard</h2>
