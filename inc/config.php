@@ -11,7 +11,10 @@ spl_autoload_register(function ($class_name) {
 });
 
 // database config
-
+const DB_HOST = 'localhost';
+const DB_USER = 'root';       
+const DB_PASS = '';   
+const DB_NAME = 'user_crud';   
 // Define base URL
 
 // navigasi config
