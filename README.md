@@ -74,7 +74,7 @@ const DB_PASS = '';
 const DB_NAME = 'user_crud';
 ```
 
-**Langkah 3: Menjalankan Server (PHP Built-in Server)
+**Langkah 3: Menjalankan Server (PHP Built-in Server)**
 1.  Buka Terminal atau Command Prompt (CMD).
 2.  Arahkan direktori ke folder ini.
    ```path
@@ -85,8 +85,8 @@ const DB_NAME = 'user_crud';
    php -S localhost:8000
    ```
 
-**Langkah 4: Buka browser (Chrome, Firefox, dll) dan kunjungi URL berikut: http://localhost:8000
-Anda akan diarahkan ke halaman Dashboard Utama. Silahkan dicoba fiturnya.
+**Langkah 4: Buka browser (Chrome, Firefox, dll)** 
+dan kunjungi URL berikut: http://localhost:8000. Anda akan diarahkan ke halaman Dashboard Utama. Silahkan dicoba fiturnya.
 
 ## 4. Demo Penggunaan (Skenario Uji)
 
