@@ -25,7 +25,6 @@ if (!$found) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Member</title>
 
-    <!-- CSS utama -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -93,10 +92,10 @@ if (!$found) {
 
             <hr class="divider">
 
-            <!-- FOTO SEKARANG -->
+            <!-- foto sekarang -->
             <div class="form-row">
                 <label>Current Photo:</label>
-                <?php if (!empty($userObj->getPhoto)) : ?>
+                <?php if (!empty($userObj->getPhoto())) : ?>
                     <img src="uploads/<?= $userObj->getPhoto() ?>" 
                         style="width:120px; border-radius:10px; margin-top:6px;">
                 <?php else: ?>
@@ -104,7 +103,7 @@ if (!$found) {
                 <?php endif; ?>
             </div>
 
-            <!-- UPLOAD FOTO BARU -->
+            <!-- upload foto baru -->
             <div class="form-row">
                 <label for="photo">New Photo (optional)</label>
                 <input type="file" id="photo" name="photo" accept="image/*">

@@ -18,7 +18,6 @@ class User {
 public function __construct() {
   $this->db = new Database();
 }
-  // Authenticate user credentials
 
   // Get all users
 public function getAll() {
@@ -108,6 +107,7 @@ public function save() {
 
         return $stmt;
     }
+
   // remove user
   public function delete($id) {
         $sql = "DELETE FROM users WHERE id = :id";

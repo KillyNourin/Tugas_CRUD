@@ -21,6 +21,6 @@ const DB_NAME = 'user_crud';
 const NAV_PAGES = [
     ['title' => 'Home',    'url' => 'index.php'],
     ['title' => 'Members', 'url' => 'members.php'],
-    ['title' => 'New',     'url' => 'create.php'],
+    ['title' => 'Join',     'url' => 'create.php'],
     ['title' => 'Logout',  'url' => 'logout.php']
 ];

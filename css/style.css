@@ -221,6 +221,19 @@ form#form-login input:focus {
     transform: translateY(-2px);
 }
 
+.member-photo {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: auto; /* <-- ini yang bikin CENTER */
+}
+
+
+
+
+
 
 
 /* TABLE CARD */

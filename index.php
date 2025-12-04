@@ -3,8 +3,6 @@
 // require necessary files
 require_once 'inc/config.php';
 
-// check if user is logged in
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,21 +21,24 @@ require_once 'inc/config.php';
 <?php Utility::showNav(); ?>
 
 <main>
-    <section>
-        <h2>Dashboard Overview</h2>
-        <p>
-            This is your dashboard where you can manage your content and view your profile data.
-        </p>
-        <h3>Your Data</h3>
-        <ul>
-            <li>ID: </li>
-            <li>Username: </li>
-            <li>Name: </li>
-            <li>City: </li>
-            <li>Join Date: </li>
-            <li>Last Login: </li>
-        </ul>
-    </section>
+<section>
+    <h2>Welcome to the User Management System</h2>
+    <p>On this page, you can manage member data — from creating new accounts, editing information, to deleting users.</p>
+
+    <h3 style="margin-top:25px;">What Can You Do?</h3>
+    <ul style="line-height:1.8;">
+        <li>Add new members</li>
+        <li>Edit user information</li>
+        <li>Delete inactive users</li>
+        <li>Manage users' profile pictures</li>
+    </ul>
+
+    <h3 style="margin-top:25px;">Quick Guide</h3>
+    <p>
+        Use the navigation menu above to access the CRUD features.  
+        All changes are saved directly to the database.
+    </p>
+</section>
 </main>
 
 </body>
