@@ -50,7 +50,7 @@ Aplikasi ini dibuat untuk memenuhi Tugas 1 Implementasi Aplikasi Back-End. Aplik
 ├── save.php            # Proses simpan data baru
 ├── testing.php         # File untuk uji coba kode
 └── update.php          # Proses update data ke DB
-
+```
 ## 3. Instruksi Menjalankan Aplikasi
 
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini di komputer lokal (Localhost):
@@ -72,13 +72,18 @@ const DB_HOST = 'localhost';
 const DB_USER = 'root';
 const DB_PASS = '';    
 const DB_NAME = 'user_crud';
+```
 
 **Langkah 3: Menjalankan Server (PHP Built-in Server)
 1.  Buka Terminal atau Command Prompt (CMD).
 2.  Arahkan direktori ke folder ini.
+    ```path
     cd path/to/TUGASCRUD
+    ```
 3.  Jalankan perintah berikut untuk memulai server: 
-    php -S localhost:8000
+   ```local
+   php -S localhost:8000
+   ```
 
 **Langkah 4: Buka browser (Chrome, Firefox, dll) dan kunjungi URL berikut: http://localhost:8000
 Anda akan diarahkan ke halaman Dashboard Utama. Silahkan dicoba fiturnya.
@@ -102,6 +107,8 @@ Mengubah data profil (Kota, Nama) dan mengganti foto profil lama dengan yang bar
 ### 4. Hapus Member (Delete)
 Menghapus data user secara permanen beserta file fotonya dari server.
 ![Demo Delete](assets/delete.gif)
+
+
 
 ---
 *Dibuat oleh: https://github.com/KillyNourin
