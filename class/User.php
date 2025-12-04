@@ -11,6 +11,7 @@ class User {
   // protected properties
     protected $id;
     protected $password;
+    protected $photo;
     protected $db;
 
   // constructor
@@ -27,22 +28,23 @@ public function getAll() {
 }
 
   // Set user properties by ID
-public function setById($id) {
-  $sql = "SELECT * FROM users WHERE id = :id LIMIT 1";
-  $stmt = $this->db->query($sql, ['id' => $id]);
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    public function setById($id) {
+        $sql = "SELECT * FROM users WHERE id = :id LIMIT 1";
+        $stmt = $this->db->query($sql, ['id' => $id]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  if ($user) {
-    $this->id = $user['id'];
-    $this->username = $user['username'];
-    $this->fullname = $user['fullname'];
-    $this->city = $user['city'];
-    $this->created_at = $user['created_at'];
-    $this->password = $user['password'];
-    return true;
-  }
-  return false;
-}
+        if ($row) {
+            $this->id        = $row['id'];
+            $this->username  = $row['username'];
+            $this->fullname  = $row['fullname'];
+            $this->city      = $row['city'];
+            $this->created_at= $row['created_at'];
+            $this->password  = $row['password'];
+            $this->photo     = $row['photo'];
+            return true;
+        }
+        return false;
+    }
 
   // Get ID
     public function getId() {
@@ -53,13 +55,62 @@ public function setById($id) {
     public function getPassword() {
       return $this->password;
     }
+  
+  // Get photo
+  public function getPhoto() {
+    return $this->photo;
+}
+  // Set photo
+    public function setPhoto($filename) {
+        $this->photo = $filename;
+    }
 
   // Set password (hashed)
     public function setPassword($password) {
       $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
-  // Save user (insert or update)
 
-  // Remove user
+  // save user
+public function save() {
+    $sql = "INSERT INTO users (username, password, fullname, city, photo, created_at)
+            VALUES (:username, :password, :fullname, :city, :photo, NOW())";
 
+    $stmt = $this->db->conn->prepare($sql);
+
+    $stmt->bindParam(':username', $this->username);
+    $stmt->bindParam(':password', $this->password);
+    $stmt->bindParam(':fullname', $this->fullname);
+    $stmt->bindParam(':city', $this->city);
+    $stmt->bindParam(':photo', $this->photo);
+
+    return $stmt->execute();
+}
+
+  // update user
+    public function update() {
+
+        $sql = "UPDATE users SET 
+                    username = :username,
+                    fullname = :fullname,
+                    city = :city,
+                    password = :password,
+                    photo    = :photo
+                WHERE id = :id";
+
+        $stmt = $this->db->query($sql, [
+            'username' => $this->username,
+            'fullname' => $this->fullname,
+            'city'     => $this->city,
+            'password' => $this->password,
+            'photo'    => $this->photo,
+            'id'       => $this->id
+        ]);
+
+        return $stmt;
+    }
+  // remove user
+  public function delete($id) {
+        $sql = "DELETE FROM users WHERE id = :id";
+        return $this->db->query($sql, ['id' => $id]);
+    }
 }

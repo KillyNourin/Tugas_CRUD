@@ -196,6 +196,32 @@ form#form-login input:focus {
     background: #574bff;
 }
 
+.btn-action {
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn-action.edit {
+    background: #4a90e2;
+}
+.btn-action.edit:hover {
+    background: #357ab8;
+    transform: translateY(-2px);
+}
+
+.btn-action.delete {
+    background: #e74c3c;
+}
+.btn-action.delete:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+
 
 /* TABLE CARD */
 

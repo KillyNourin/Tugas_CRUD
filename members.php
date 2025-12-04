@@ -52,9 +52,13 @@ $members = $user->getAll();
                         echo '<td>' . htmlspecialchars($member['fullname']) . '</td>';
                         echo '<td>' . htmlspecialchars($member['city']) . '</td>';
                         echo '<td>' . htmlspecialchars($member['created_at']) . '</td>';
-                        echo '<td>&nbsp;</td>';
+                        echo '<td>
+                        <a class="btn-action edit" href="edit.php?id=' . $member['id'] . '">Edit</a>
+                        <a class="btn-action delete" href="delete.php?id=' . $member['id'] . '" onclick="return confirm(\'Hapus user ini?\')">Delete</a>
+                        </td>';
                         echo '</tr>';
                     }
+                    
                     ?>
                 </tbody>
             </table>
