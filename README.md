@@ -26,7 +26,11 @@ Aplikasi ini dibuat untuk memenuhi Tugas 1 Implementasi Aplikasi Back-End. Aplik
 ```text
 /TUGASCRUD
 ├── assets/             # Aset statis (gambar/gif dokumentasi)
-│   └── demo.gif
+│   ├── create.gif    
+│   ├── delete.gif
+│   ├── demo.gif    
+│   ├── read.gif
+│   └── update.gif
 ├── class/              # Kumpulan Class (OOP)
 │   ├── Database.php    # Koneksi database via PDO
 │   ├── User.php        # Model User (CRUD Logic)
@@ -105,7 +109,7 @@ Mengubah data profil (Kota, Nama) dan mengganti foto profil lama dengan yang bar
 ![Demo Update](assets/update.gif)
 
 ### 4. Hapus Member (Delete)
-Menghapus data user secara permanen beserta file fotonya dari server.
+Menghapus data user secara permanen beserta file fotonya.
 ![Demo Delete](assets/delete.gif)
 
 
