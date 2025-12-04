@@ -33,6 +33,7 @@ $members = $user->getAll();
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Photo</th>
                         <th>Username</th>
                         <th>Full Name</th>
                         <th>City</th>
@@ -46,8 +47,12 @@ $members = $user->getAll();
                         echo '<tr><td colspan="6">Belum ada data user.</td></tr>';
                     }
                     foreach ($members as $member) {
-                        echo '<tr>';
+                        // sesuai urutan dari id dst
                         echo '<td>' . htmlspecialchars($member['id']) . '</td>';
+                        $photo = (!empty($member['photo']))
+                        ? 'uploads/' . $member['photo']
+                        : 'uploads/default.png';
+                        echo '<td><img class="member-photo" src="' . $photo . '"></td>';
                         echo '<td>' . htmlspecialchars($member['username']) . '</td>';
                         echo '<td>' . htmlspecialchars($member['fullname']) . '</td>';
                         echo '<td>' . htmlspecialchars($member['city']) . '</td>';
