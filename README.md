@@ -77,9 +77,9 @@ const DB_NAME = 'user_crud';
 **Langkah 3: Menjalankan Server (PHP Built-in Server)
 1.  Buka Terminal atau Command Prompt (CMD).
 2.  Arahkan direktori ke folder ini.
-    ```path
+   ```path
     cd path/to/TUGASCRUD
-    ```
+   ```
 3.  Jalankan perintah berikut untuk memulai server: 
    ```local
    php -S localhost:8000
@@ -111,4 +111,9 @@ Menghapus data user secara permanen beserta file fotonya dari server.
 
 
 ---
-*Dibuat oleh: https://github.com/KillyNourin
+### Dibuat oleh:
+
+<a href="https://github.com/KillyNourin">
+  <img src="https://github.com/KillyNourin.png" width="60" style="border-radius: 50%;" alt="Angga">
+  <br>
+</a>
